@@ -65,5 +65,14 @@
 
   {% section 'footer' %}
 
+  <style>
+    @font-face {
+      font-family: "TotentanzBackslanted";
+      src: url("{{ '../assets/fonts/totentanz-backslanted-webfont.woff2' | asset_url }}") format("woff2"),
+           url('{{ "../assets/fonts/totentanz-backslanted-webfont.woff" | asset_url }}') format("woff"),
+           url('{{ "../assets/fonts/totentanz-backslanted-webfont.rff" | asset_url }}') format("truetype");
+    }
+  </style>
+
 </body>
 </html>
