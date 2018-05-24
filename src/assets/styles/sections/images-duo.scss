@@ -1,0 +1,21 @@
+.images-duo-wrapper {
+  display: grid;
+  grid-template-columns: 20px 1fr 20px;
+  max-width: 100%;
+}
+
+.images-duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 2px;
+  grid-row-gap: 2px;
+  max-width: 100%;
+  text-align: center;
+}
+
+/* MEDIA QUERIES */
+@media only screen and (min-width: 768px) {
+  .images-duo-wrapper {
+    grid-template-columns: 117px 1fr 117px;
+  }
+}
