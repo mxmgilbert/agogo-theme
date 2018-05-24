@@ -1,22 +1,24 @@
-.featured-collection-wrapper {
+.featured-product-wrapper {
   display: grid;
   grid-template-columns: 20px 1fr 20px;
   max-width: 100%;
+  margin-top: 2px;
 }
 
-.featured-collection {
+.featured-product {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: 1fr 1fr;
   grid-column-gap: 2px;
   grid-row-gap: 2px;
   max-width: 100%;
   text-align: center;
+  position: relative;
 
-  .caption {
+  .caption-featured-product {
     color: white;
     position: absolute;
     bottom: 0;
-    width: 100%;
+    width: 50%;
     padding-top: 30px;
     padding-bottom: 40px;
     font-family: "TotentanzBackslanted";
@@ -40,12 +42,8 @@
   }
 }
 
-.featured-collection-item {
-  position: relative;
-}
-
-.featured-collection-item:hover {
-  .caption {
+.featured-product:hover {
+  .caption-featured-product {
     background: rgba(255, 255, 255, 0.8);
     color: black;
   }
@@ -53,7 +51,7 @@
 
 /* MEDIA QUERIES */
 @media only screen and (min-width: 768px) {
-  .featured-collection-wrapper {
+  .featured-product-wrapper {
     grid-template-columns: 117px 1fr 117px;
   }
 }
