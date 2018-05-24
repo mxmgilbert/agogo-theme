@@ -1,0 +1,52 @@
+header {
+  h1 {
+    margin: 0;
+  }
+}
+
+nav {
+  width: 120px;
+  height: 100%;
+  display: inline-block;
+  writing-mode: sideways-lr;
+  position: fixed;
+  font-family: "TotentanzBackslanted";
+  font-size: 28px;
+
+  ul {
+    display: flex;
+  }
+
+  li {
+    list-style-type: none;
+  }
+
+  a {
+    text-decoration: none;
+    text-orientation: sideways;
+    padding-bottom: 20px;
+    color: black;
+    text-transform: uppercase;
+    -webkit-transition: all 400ms ease-in-out;
+    -ms-transition: all 400ms ease-in-out;
+    transition: all 400ms ease-in-out;
+  }
+
+  a:hover {
+    color: #ffa2df;
+  }
+}
+
+.logo-image {
+  position: fixed;
+  top: 76px;
+  left: calc(50% - 100px);
+  z-index: 10;
+}
+
+.cart {
+  position: fixed;
+  right: 0;
+  max-width: 100px;
+  top: 76px;
+}

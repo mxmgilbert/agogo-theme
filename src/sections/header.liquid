@@ -48,10 +48,10 @@
       </div>
     {% endif %}
 
-    <a href="/cart">
-      {% include 'icon-cart' %}
-      {{ 'layout.cart.title' | t }}
-      ({{ cart.item_count }} {{ 'layout.cart.items_count' | t: count: cart.item_count }})
+    <a href="/cart" class="cart">
+      {% include 'icon-cart-agogo' %}
+      {%- comment -%}{{ 'layout.cart.title' | t }}
+      ({{ cart.item_count }} {{ 'layout.cart.items_count' | t: count: cart.item_count }}){%- endcomment -%}
     </a>
 
     {% if shop.customer_accounts_enabled %}
@@ -79,6 +79,7 @@
       </ul>
     {% endif %}
 
+    {%- comment -%}
     <form action="/search" method="get" role="search">
       <label for="Search" class="label-hidden">
         {{ 'general.search.placeholder' | t }}
@@ -95,6 +96,7 @@
         <span class="icon-fallback-text">{{ 'general.search.submit' | t }}</span>
       </button>
     </form>
+    {%- endcomment -%}
   </header>
 
   <nav role="navigation">
@@ -121,6 +123,7 @@
             <a href="{{ link.url }}">
               {{ link.title }}
             </a>
+            <span>|</span>
           </li>
         {% endif %}
       {% endfor %}
