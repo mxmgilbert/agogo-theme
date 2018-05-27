@@ -99,7 +99,35 @@
     {%- endcomment -%}
   </header>
 
-  <nav role="navigation">
+  <nav role="navigation" class="filter">
+    <ul>
+      {% for link in linklists[section.settings.menu_for_filter].links %}
+        {% if link.links != blank %}
+          <li>
+            <a href="{{ link.url }}">
+              {{ link.title }}
+              {% include 'icon-arrow-down' %}
+            </a>
+            <ul>
+              {% for childlink in link.links %}
+                <li>
+                  <a href="{{ childlink.url }}">
+                    {{ childlink.title }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </li>
+        {% else %}
+          <li>
+            <a href="{{ link.url }}"> {{ link.title }} </a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </nav>
+
+  <nav role="navigation" class="main-nav">
     <ul>
       {% for link in linklists[section.settings.menu].links %}
         {% if link.links != blank %}
@@ -120,10 +148,7 @@
           </li>
         {% else %}
           <li>
-            <a href="{{ link.url }}">
-              {{ link.title }}
-            </a>
-            <span>|</span>
+            <a href="{{ link.url }}"> {{ link.title | prepend: " | " | append: ' '}} </a>
           </li>
         {% endif %}
       {% endfor %}
@@ -195,6 +220,12 @@
         "type": "link_list",
         "id": "menu",
         "label": "Menu",
+        "default": "main-menu"
+      },
+      {
+        "type": "link_list",
+        "id": "menu_for_filter",
+        "label": "Menu Filter",
         "default": "main-menu"
       }
     ]

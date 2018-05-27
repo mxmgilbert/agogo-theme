@@ -4,12 +4,15 @@ header {
   }
 }
 
-nav {
-  width: 120px;
-  height: 100%;
-  display: inline-block;
-  writing-mode: sideways-lr;
+nav.main-nav {
+  text-align: center;
+  width: 715px;
+  height: 80px;
+  display: block;
+  transform: rotate(-90deg);
   position: fixed;
+  left: -20%;
+  top: 63%;
   font-family: "TotentanzBackslanted";
   font-size: 28px;
 
@@ -23,17 +26,41 @@ nav {
 
   a {
     text-decoration: none;
-    text-orientation: sideways;
-    padding-bottom: 20px;
+    padding: 0 10px;
     color: black;
     text-transform: uppercase;
-    -webkit-transition: all 400ms ease-in-out;
-    -ms-transition: all 400ms ease-in-out;
-    transition: all 400ms ease-in-out;
+    -webkit-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
   }
 
   a:hover {
     color: #ffa2df;
+  }
+}
+
+nav.filter {
+  position: fixed;
+  z-index: 10;
+  top: 8%;
+
+  ul {
+    list-style: none;
+    margin-left: 21px;
+
+    a {
+      text-decoration: none;
+      color: black;
+      font-family: "TotentanzBackslanted";
+      font-size: 14px;
+      -webkit-transition: all 300ms ease-in-out;
+      -ms-transition: all 300ms ease-in-out;
+      transition: all 300ms ease-in-out;
+    }
+
+    a:hover {
+      color: #ffa2df;
+    }
   }
 }
 
