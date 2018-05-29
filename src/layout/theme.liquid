@@ -70,7 +70,20 @@
       font-family: "TotentanzBackslanted";
       src: url("{{ '../assets/fonts/totentanz-backslanted-webfont.woff2' | asset_url }}") format("woff2"),
            url('{{ "../assets/fonts/totentanz-backslanted-webfont.woff" | asset_url }}') format("woff"),
-           url('{{ "../assets/fonts/totentanz-backslanted-webfont.rff" | asset_url }}') format("truetype");
+           url('{{ "../assets/fonts/totentanz-backslanted-webfont.ttf" | asset_url }}') format("truetype");
+    }
+
+    @font-face {
+      font-family: "TotentanzSlanted";
+      src: url("{{ '../assets/fonts/totentanz-slanted-webfont.woff2' | asset_url }}") format("woff2"),
+           url('{{ "../assets/fonts/totentanz-slanted-webfont.woff" | asset_url }}') format("woff"),
+           url('{{ "../assets/fonts/totentanz-slanted-webfont.ttf" | asset_url }}') format("truetype");
+    }
+    @font-face {
+      font-family: "InterstateBold";
+      src: url("{{ '../assets/fonts/interstate_bold-webfont.woff2' | asset_url }}") format("woff2"),
+           url('{{ "../assets/fonts/interstate_bold-webfont.woff" | asset_url }}') format("woff"),
+           url('{{ "../assets/fonts/interstate_bold-webfont.ttf" | asset_url }}') format("truetype");
     }
   </style>
 
