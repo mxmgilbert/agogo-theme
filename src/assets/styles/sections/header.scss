@@ -11,10 +11,10 @@ nav.main-nav {
   display: block;
   transform: rotate(-90deg);
   position: fixed;
-  left: -20%;
-  top: 63%;
+  left: -302px;
+  top: 440px;
   font-family: "TotentanzBackslanted";
-  font-size: 28px;
+  font-size: 24px;
 
   ul {
     display: flex;
@@ -37,6 +37,12 @@ nav.main-nav {
   a:hover {
     color: #ffa2df;
   }
+
+  span.nav-separator {
+    font-family: sans-serif;
+    font-weight: lighter;
+    font-size: 26px;
+  }
 }
 
 nav.filter {
@@ -46,7 +52,7 @@ nav.filter {
 
   ul {
     list-style: none;
-    margin-left: 21px;
+    margin-left: 5px;
 
     a {
       text-decoration: none;
