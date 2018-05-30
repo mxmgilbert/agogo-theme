@@ -38,6 +38,21 @@
 @import "./sections/header";
 @import "./sections/footer";
 @import "./sections/product";
+@import "./sections/cart";
 
 // Templates
 @import "./templates/gift_card";
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+#shopify-section-footer {
+  flex-shrink: 0;
+}
