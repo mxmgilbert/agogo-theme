@@ -40,7 +40,8 @@ nav.main-nav {
     transition: all 300ms ease-in-out;
   }
 
-  a:hover {
+  a:hover,
+  a.active {
     color: #ffa2df;
   }
 
@@ -70,7 +71,8 @@ nav.filter {
       transition: all 300ms ease-in-out;
     }
 
-    a:hover {
+    a:hover,
+    a:active {
       color: #ffa2df;
     }
   }
