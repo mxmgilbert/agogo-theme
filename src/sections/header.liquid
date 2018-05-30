@@ -52,6 +52,9 @@
       {% include 'icon-cart-agogo' %}
       {%- comment -%}{{ 'layout.cart.title' | t }}
       ({{ cart.item_count }} {{ 'layout.cart.items_count' | t: count: cart.item_count }}){%- endcomment -%}
+      {% if cart.item_count > 0%}
+      <span class="cart-item-count">{{ cart.item_count }}</span>
+      {% endif %}
     </a>
 
     {% if shop.customer_accounts_enabled %}
@@ -99,6 +102,7 @@
     {%- endcomment -%}
   </header>
 
+{%comment%}
   <nav role="navigation" class="filter">
     <ul>
       {% for link in linklists[section.settings.menu_for_filter].links %}
@@ -126,6 +130,7 @@
       {% endfor %}
     </ul>
   </nav>
+  {%endcomment%}
 
   <nav role="navigation" class="main-nav">
     <ul>
