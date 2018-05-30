@@ -1,9 +1,9 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Starter theme",
+    "theme_name": "Agogo theme",
     "theme_version": "1.0.0",
-    "theme_author": "Shopify",
+    "theme_author": "Maxime Gilbert",
     "theme_documentation_url": "https://github.com/Shopify/starter-theme",
     "theme_support_url": "https://github.com/Shopify/starter-theme/issues"
   },

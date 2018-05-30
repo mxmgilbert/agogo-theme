@@ -84,17 +84,16 @@
   },
   "cart": {
     "general": {
-      "title": "Shopping Cart",
+      "title": "Your Order",
       "remove": "Remove",
       "note": "Special instructions for seller",
-      "subtotal": "Subtotal",
+      "subtotal": "SUBTOTAL • before shipping cost",
       "shipping_at_checkout": "Shipping & taxes calculated at checkout",
       "update": "Update Cart",
-      "checkout": "Check Out",
+      "checkout": "Continue to payment &#8594;",
       "empty": "Your cart is currently empty.",
       "cookies_required": "Enable cookies to use the shopping cart",
-      "continue_browsing_html":
-        "Continue browsing <a href=\"/collections/all\">here</a>.",
+      "continue_browsing_html": "Continue browsing <a href=\"/\">here</a>.",
       "item_quantity": "Item quantity",
       "savings": "You're saving"
     },
