@@ -4,6 +4,11 @@ header {
   }
 }
 
+#shopify-section-header {
+  z-index: 999;
+  position: relative;
+}
+
 nav.main-nav {
   text-align: center;
   width: 715px;
@@ -12,7 +17,8 @@ nav.main-nav {
   transform: rotate(-90deg);
   position: fixed;
   left: -302px;
-  top: 440px;
+  /*top: 440px;*/
+  top: 310px;
   font-family: "TotentanzBackslanted";
   font-size: 24px;
 
@@ -74,12 +80,25 @@ nav.filter {
   position: fixed;
   top: 76px;
   left: calc(50% - 100px);
-  z-index: 10;
+  z-index: 999;
 }
 
 .cart {
   position: fixed;
-  right: 0;
+  right: 6px;
   max-width: 100px;
+  width: 100px;
   top: 76px;
+}
+
+.cart-item-count {
+  position: absolute;
+  left: 36%;
+  top: 10%;
+  color: white;
+  background: black;
+  font-family: "InterstateBold";
+  text-decoration: none;
+  padding: 5px 9px;
+  border-radius: 93%;
 }
