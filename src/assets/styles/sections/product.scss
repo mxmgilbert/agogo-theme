@@ -1,6 +1,6 @@
 .product-wrapper {
   display: grid;
-  grid-template-columns: 0px 1fr 0px;
+  grid-template-columns: 230px 1fr 230px;
   max-width: 100%;
 }
 
@@ -69,8 +69,34 @@ button.add-to-cart {
 }
 
 /* MEDIA QUERIES */
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 768px) {
   .product-wrapper {
-    grid-template-columns: 230px 1fr 230px;
+    grid-template-columns: 1fr;
+
+    .product-container {
+      grid-template-columns: 1fr;
+    }
+
+    .product-information-container {
+      padding-left: 0;
+
+      h1 {
+        text-align: center;
+        font-size: 28px;
+      }
+
+      form {
+        text-align: center;
+      }
+
+      .one-size {
+        margin: 0 auto;
+      }
+
+      .rte {
+        padding-left: 35px;
+        padding-right: 20px;
+      }
+    }
   }
 }
