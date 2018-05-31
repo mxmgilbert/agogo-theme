@@ -133,6 +133,11 @@
   {%endcomment%}
 
   <nav role="navigation" class="main-nav" id="main-nav">
+
+    <a href="/cart" class="cart-nav">
+      {{ 'layout.cart.title' | t }}
+      ({{ cart.item_count }})
+    </a>
     <ul>
       {% for link in linklists[section.settings.menu].links %}
         {% if link.links != blank %}
@@ -160,7 +165,7 @@
       {% endfor %}
       {% comment %} Mobile nav icon {% endcomment %}
       <li class="mobile-menu-icon">
-        <a href="javascript:void(0);"  onclick="myFunction()"><i class="fa fa-bars">{% include 'icon-hamburger' %}</i></a>
+        <a href="javascript:void(0);"  onclick="toggleNav()"><i class="fa fa-bars">{% include 'icon-hamburger' %}</i></a>
       </li>
     </ul>
   </nav>

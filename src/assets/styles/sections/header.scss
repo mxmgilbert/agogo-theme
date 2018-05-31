@@ -109,6 +109,10 @@ nav.filter {
   border-radius: 93%;
 }
 
+.cart-nav {
+  display: none;
+}
+
 /* MEDIA QUERIES */
 @media only screen and (max-width: 768px) {
   nav.main-nav {
@@ -120,6 +124,11 @@ nav.filter {
 
     ul {
       display: grid;
+      padding-left: 27%;
+    }
+
+    span.nav-separator {
+      display: none;
     }
   }
 
@@ -132,20 +141,35 @@ nav.filter {
     display: block;
     left: 16px;
     position: absolute;
+    top: 26px;
   }
 
   .main-nav.responsive {
     position: relative;
+    padding-top: 30%;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.7);
   }
-  .main-nav.responsive a.mobile-menu-icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .main-nav.responsive li {
-    float: none;
+
+  .main-nav.responsive li:not(:last-child) {
     display: block;
     text-align: left;
+    border-bottom: 1px solid black;
+    font-size: 30px;
+  }
+
+  .main-nav.responsive li:first-child {
+    border-top: 2px solid black;
+  }
+
+  .main-nav.responsive li:nth-last-child(2) {
+    border-bottom: 2px solid black;
+  }
+
+  .main-nav.responsive .cart-nav {
+    display: inline-block;
+    font-size: 20px;
+    margin-left: -80px;
   }
 
   .logo-image {
@@ -156,14 +180,15 @@ nav.filter {
 
   .cart {
     top: 8px;
-    width: 80px;
+    width: 60px;
   }
 
   .cart-item-count {
-    left: 38%;
-    top: 11%;
-    padding: 1px 5px;
+    left: 36%;
+    top: 10%;
+    padding: 2px 5px;
     border-radius: 93%;
+    font-size: 11px;
   }
 
   #shopify-section-header {
