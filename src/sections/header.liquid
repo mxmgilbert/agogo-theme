@@ -132,7 +132,7 @@
   </nav>
   {%endcomment%}
 
-  <nav role="navigation" class="main-nav">
+  <nav role="navigation" class="main-nav" id="main-nav">
     <ul>
       {% for link in linklists[section.settings.menu].links %}
         {% if link.links != blank %}
@@ -158,6 +158,10 @@
           </li>
         {% endif %}
       {% endfor %}
+      {% comment %} Mobile nav icon {% endcomment %}
+      <li class="mobile-menu-icon">
+        <a href="javascript:void(0);"  onclick="myFunction()"><i class="fa fa-bars">Menu</i></a>
+      </li>
     </ul>
   </nav>
 </section>

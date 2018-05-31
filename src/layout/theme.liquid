@@ -46,6 +46,15 @@
       },
       moneyFormat: {{ shop.money_format | json }}
     };
+
+    function myFunction() {
+      const x = document.getElementById("main-nav");
+      if (x.className === "main-nav") {
+        x.className += " responsive";
+      } else {
+        x.className = "main-nav";
+      }
+    }
   </script>
 
   {% include 'script-tags', layout: 'theme' %}
