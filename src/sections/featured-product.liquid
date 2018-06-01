@@ -23,7 +23,7 @@
 
 
       {% if product.images.size > 1 %}
-        {% for image in product.images limit:1 offset:1 %}
+        {% for image in product.images limit:1 offset:7 %}
          <a href="{{ product.url }}">
           {% include 'responsive-image' with
             image: image,
