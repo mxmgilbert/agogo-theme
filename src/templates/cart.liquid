@@ -103,7 +103,6 @@
 
         <span class="back-to-shop-button"><a href="/">&#8592; Back to shop</a></span>
        
-    
         {% else %}
           <h1>{{ 'cart.general.title' | t }}</h1>
 
@@ -112,7 +111,7 @@
           {% endcomment %}
           <div class="supports-cookies">
             <p>{{ 'cart.general.empty' | t }}</p>
-            <p>{{ 'cart.general.continue_browsing_html' | t }}</p>
+            <span class="back-to-shop-button"><a href="/">&#8592; Back to shop</a></span>
           </div>
 
           {% comment %}
