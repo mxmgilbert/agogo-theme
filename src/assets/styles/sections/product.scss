@@ -74,15 +74,22 @@ button.add-to-cart {
     grid-template-columns: 1fr;
 
     .product-container {
-      grid-template-columns: 1fr;
+      grid-template-columns: 100%;
+      grid-template-rows: minmax(350px, min-content);
+
+      .featured-image-product {
+        margin-top: 45px;
+      }
     }
 
     .product-information-container {
       padding-left: 0;
+      grid-row: 2;
 
       h1 {
         text-align: center;
         font-size: 28px;
+        font-weight: 100;
       }
 
       form {
