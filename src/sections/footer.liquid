@@ -20,6 +20,12 @@
         {% endif %}
 
       {% endfor %}
+      <li>
+      <a href="mailto:love@agogo.fr" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: social }}">
+              {% include 'icon-mail' %}
+              <span class="icon-fallback-text">{{ mail }}</span>
+            </a>
+      </li>
     </ul>
     </div>
 
