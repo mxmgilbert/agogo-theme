@@ -6,18 +6,18 @@
 
 .product-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  grid-template-rows: 800px repeat(auto-fit, minmax(350px, max-content));
+  grid-template-columns: repeat(2, minmax(350px, 1fr));
+  grid-template-rows: 760px repeat(auto-fit, minmax(350px, max-content));
   grid-column-gap: 2px;
   grid-row-gap: 2px;
   max-width: 100%;
-  margin-top: 12%;
+  margin-top: 9%;
   font-family: "TotentanzSlanted";
 
   h1 {
     font-family: "TotentanzSlanted";
-    font-size: 48px;
-    margin-bottom: 25px;
+    font-size: 2.4em;
+    font-weight: lighter;
   }
 }
 
@@ -60,12 +60,17 @@ button.add-to-cart {
   display: inline-grid;
   justify-items: center;
   align-items: center;
+
+  .one-size {
+    margin-top: 25%;
+  }
 }
 
 .black-point {
   display: block;
   text-align: center;
   font-size: 30px;
+  margin-top: 10%;
 }
 
 /* MEDIA QUERIES */
@@ -75,6 +80,7 @@ button.add-to-cart {
 
     .product-container {
       grid-template-columns: 100%;
+      grid-template-columns: 1;
       grid-template-rows: minmax(350px, min-content);
 
       .featured-image-product {
