@@ -158,8 +158,7 @@
           </li>
         {% else %}
           <li>
-           <span class="nav-separator">|</span>
-            <a href="{{ link.url }}" {% if link.active %} class='active' {%endif %}> {{ link.title}} </a>
+            <a href="{{ link.url }}" {% if link.active %} class='active' {%endif %}> {{ link.title}} <span class="nav-separator">/</span></a>
           </li>
         {% endif %}
       {% endfor %}
