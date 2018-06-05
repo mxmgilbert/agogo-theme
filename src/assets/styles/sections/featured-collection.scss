@@ -6,7 +6,7 @@
 
 .featured-collection {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(3, minmax(320px, 1fr));
   grid-column-gap: 2px;
   grid-row-gap: 2px;
   max-width: 100%;
@@ -17,20 +17,20 @@
     position: absolute;
     bottom: 0;
     width: 100%;
-    padding-top: 30px;
-    padding-bottom: 40px;
+    padding-top: 10px;
+    padding-bottom: 25px;
     font-family: "TotentanzBackslanted";
     -webkit-transition: all 400ms ease-in-out;
     -ms-transition: all 400ms ease-in-out;
     transition: all 400ms ease-in-out;
 
     p {
-      font-size: 22px;
+      font-size: 1.2em;
       margin-bottom: 0;
     }
 
     .price-list {
-      font-size: 35px;
+      font-size: 1.6em;
     }
 
     .product-title-separator {
@@ -59,6 +59,10 @@
 
   .featured-collection-wrapper {
     grid-template-columns: 1fr;
+  }
+
+  .featured-collection {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   }
 
   .featured-collection > * {

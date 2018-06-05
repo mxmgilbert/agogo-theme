@@ -19,20 +19,20 @@
     position: absolute;
     bottom: 0;
     width: 50%;
-    padding-top: 30px;
-    padding-bottom: 40px;
+    padding-top: 10px;
+    padding-bottom: 25px;
     font-family: "TotentanzBackslanted";
     -webkit-transition: all 400ms ease-in-out;
     -ms-transition: all 400ms ease-in-out;
     transition: all 400ms ease-in-out;
 
     p {
-      font-size: 22px;
+      font-size: 1.2em;
       margin-bottom: 0;
     }
 
     .price-list {
-      font-size: 35px;
+      font-size: 1.6em;
     }
 
     .product-title-separator {

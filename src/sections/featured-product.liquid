@@ -15,13 +15,6 @@
       <meta itemprop="image" content="{{ featured_image | img_url: '800x' }}">
       <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
 
-      {% if featured_image.src != blank %}
-      <a href="{{ product.url }}">
-        <img src="{{ featured_image.src | img_url: '900x' }}" alt="{{ image.alt | escape }}">
-      </a>
-      {% endif %}
-
-
       {% if product.images.size > 1 %}
         {% for image in product.images limit:1 offset:7 %}
          <a href="{{ product.url }}">
@@ -30,8 +23,14 @@
             max_width: 900,
             max_height: 900
           %}
-           
-          <div class="caption-featured-product">
+          </a>
+        {% endfor %}
+      {% endif %}
+
+      {% if featured_image.src != blank %}
+      <a href="{{ product.url }}">
+        <img src="{{ featured_image.src | img_url: '900x' }}" alt="{{ image.alt | escape }}">
+        <div class="caption-featured-product">
             <p>{{ product.title | escape }}</p>
             <span class="product-title-separator">——————————</span>
             <span class="price-list">
@@ -53,11 +52,9 @@
           {% endif %}
         </span>
           </div>
-          </a>
-        {% endfor %}
+      </a>
       {% endif %}
 
-    
       {%- comment -%}
       {% if product.vendor != blank %}
         <p>{{ product.vendor }}</p>
