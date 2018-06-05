@@ -52,6 +52,26 @@
     {%- assign footer_linklist = section.settings.footer_linklist -%}
     {% if linklists[footer_linklist].links.size > 0 %}
       <ul>
+      {% comment %} form newsletter {% endcomment %} 
+        {% form 'customer' %}
+            {{ form.errors | default_errors }}
+            {% if form.posted_successfully? %}
+              <p>{{ 'general.newsletter_form.confirmation' | t }}</p>
+            {% else %}
+              <input type="hidden" name="contact[tags]" value="newsletter">
+              <input type="email"
+                name="contact[email]"
+                id="Email"
+                class="email-input"
+                value="{% if customer.email != blank %}{{ customer.email }}{% endif %}"
+                placeholder="{{ 'general.newsletter_form.email_placeholder' | t }}"
+                autocorrect="off"
+                autocapitalize="off">
+              <button type="submit" name="commit" id="Subscribe">
+                <span>{% include 'icon-subscribe' %}</span>
+              </button>
+            {% endif %}
+          {% endform %}
         {% for link in linklists[footer_linklist].links %}
           <li><a href="{{ link.url }}">{{ link.title }}</a></li>
         {% endfor %}
@@ -60,7 +80,7 @@
     </diV>
 
     <div class="copyright">
-      <small>&copy; {{ 'now' | date: "%Y" }} {{ shop.name | link_to: '/' }} —  Dev : Maxime Gilbert  —  Photos : © Mario Simon Lafleur</small>
+      <small>&copy; {{ 'now' | date: "%Y" }} {{ shop.name | link_to: '/' }} —  Dev : Maxime Gilbert  —  <a href="http://mariosimonlafleur.fr/" target="_blank">Photos : © Mario Simon Lafleur</a></small>
     </div>
   </div>
   <div class="sidebar right-sidebar"></div>
