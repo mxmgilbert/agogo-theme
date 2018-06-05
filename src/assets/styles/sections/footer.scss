@@ -80,7 +80,7 @@
     display: block;
     padding-top: 17px;
     font-family: "TotentanzBackslanted";
-    font-size: 16px;
+    font-size: 0.9em;
 
     a {
       color: black;
@@ -126,7 +126,7 @@
 
       a {
         padding-left: 10px;
-        font-size: 13px;
+        font-size: 0.7em;
       }
 
       li:first-child {
@@ -141,5 +141,8 @@
 
   .copyright {
     grid-row: 3;
+    small {
+      font-size: 0.7em;
+    }
   }
 }
