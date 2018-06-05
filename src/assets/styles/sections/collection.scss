@@ -1,0 +1,71 @@
+.collection-wrapper {
+  display: grid;
+  grid-template-columns: 80px 1fr 80px;
+  max-width: 100%;
+}
+
+.collection-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(320px, 1fr));
+  grid-column-gap: 2px;
+  grid-row-gap: 2px;
+  max-width: 100%;
+  text-align: center;
+
+  .collection-item {
+    position: relative;
+  }
+
+  .caption {
+    color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 25px;
+    font-family: "TotentanzBackslanted";
+    -webkit-transition: all 400ms ease-in-out;
+    -ms-transition: all 400ms ease-in-out;
+    transition: all 400ms ease-in-out;
+
+    p {
+      font-size: 1.2em;
+      margin-bottom: 0;
+    }
+
+    .price-list {
+      font-size: 1.6em;
+    }
+
+    .product-title-separator {
+      display: block;
+      padding: 5px 0;
+    }
+  }
+}
+
+.collection-item:hover {
+  .caption {
+    background: rgba(255, 255, 255, 0.8);
+    color: black;
+  }
+}
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+
+  .collection-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .collection-container {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+
+  .collection-container > * {
+    text-decoration: none;
+  }
+}

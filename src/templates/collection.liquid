@@ -1,4 +1,5 @@
-{% paginate collection.products by 12 %}
+{% paginate collection.products by 36 %}
+  {%comment%}
   <header role="banner">
     <h1>{{ collection.title }}</h1>
     {% if collection.description != blank %}
@@ -23,24 +24,26 @@
       </ul>
     {% endif %}
   </header>
+  {%endcomment%}
 
-  <div>
+<div class="collection-wrapper"> 
+  <div class="sidebar left-sidebar"></div>
+  <div class="collection-container">
     {% for product in collection.products %}
-      <div>
+      <a href="{{ product.url | within: collection }}" class="collection-item">
         {% if product.featured_image != blank %}
-          <a href="{{ product.url | within: collection }}">
+          <div class="featured-image__collection">
             {% include 'responsive-image' with
               image: product.featured_image,
               max_width: 700,
               max_height: 800
             %}
-          </a>
+          </div>
         {% endif %}
-
-        <p>
-          <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
-        </p>
-        <p>
+      <div class="caption">
+        <p>{{ product.title | escape }}</p>
+        <span class="product-title-separator">——————————</span>
+        <span class="price-list">
           {% if product.compare_at_price > product.price %}
 
             {% if product.price_varies %}
@@ -70,8 +73,9 @@
           {% unless product.available %}
             {{ 'products.product.sold_out' | t }}
           {% endunless %}
-        </p>
-      </div>
+        </span>
+        </div>
+      </a>
 
     {% else %}
       {% if collection.handle == 'all' and collection.all_vendors.size == 0 and collection.all_types.size == 0 %}
@@ -95,6 +99,8 @@
 
     {% endfor %}
   </div>
+  <div class="sidebar right-sidebar"></div>
+</div>
 
   {% if paginate.pages > 1 %}
     {% include 'pagination' %}
