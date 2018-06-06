@@ -3,7 +3,17 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 2px;
-    font-family: "TotentanzBackslanted";
+    font-family: "TotentanzSlanted";
+
+    .cgv {
+      grid-column-start: 1;
+      grid-column-end: 3;
+
+      p {
+        max-width: 90%;
+        margin-left: 5%;
+      }
+    }
 
     p.about {
       max-width: 60%;
@@ -19,17 +29,29 @@
     }
 
     h1 {
-      font-family: "TotentanzBackslanted";
+      font-family: "TotentanzSlanted";
       grid-column-start: 1;
       grid-column-end: 3;
       border-bottom: 1px solid black;
       max-width: 90%;
       margin-left: 5%;
+      text-transform: uppercase;
+      font-weight: lighter;
+      padding-bottom: 10px;
+      font-size: 1.5em;
     }
 
     h3 {
-      font-family: "TotentanzBackslanted";
+      font-family: "TotentanzSlanted";
       font-weight: lighter;
+    }
+
+    h4 {
+      font-family: "TotentanzSlanted";
+      text-transform: uppercase;
+      font-size: 1em;
+      max-width: 90%;
+      margin-left: 5%;
     }
 
     .stockist {
