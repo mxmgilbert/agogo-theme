@@ -78,6 +78,15 @@
     .rte {
       display: grid;
       grid-template-columns: 1fr;
+
+      .about.move-mobile {
+        grid-row: 4/5;
+      }
+
+      p.about {
+        max-width: 80%;
+        padding-top: 2%;
+      }
     }
   }
 }
