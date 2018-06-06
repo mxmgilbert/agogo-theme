@@ -11,9 +11,9 @@
   max-width: 100%;
 
   h1 {
-    font-family: "TotentanzSlanted";
+    font-family: 'TotentanzSlanted';
     color: white;
-    font-size: 48px;
+    font-size: 1.7em;
     font-weight: normal;
     border-bottom: 3px solid white;
     padding-bottom: 15px;
@@ -40,7 +40,7 @@
 }
 
 .product-infos * {
-  font-family: "TotentanzSlanted";
+  font-family: 'TotentanzSlanted';
 }
 
 .product-picture-cart {
@@ -93,7 +93,7 @@
 }
 
 .subtotal-infos {
-  font-family: "TotentanzSlanted";
+  font-family: 'TotentanzSlanted';
   display: grid;
   grid-template-columns: 1fr 1fr;
   border-top: 3px solid white;
@@ -122,12 +122,12 @@
   text-transform: uppercase;
   color: white;
   background: black;
-  font-family: "InterstateBold";
+  font-family: 'InterstateBold';
   letter-spacing: 0.1em;
 }
 
 .back-to-shop-button {
-  font-family: "TotentanzBackslanted";
+  font-family: 'TotentanzBackslanted';
   width: 100%;
   text-align: center;
   display: block;
