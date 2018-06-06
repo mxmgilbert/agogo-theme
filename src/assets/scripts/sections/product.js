@@ -8,8 +8,8 @@
 
 import $ from 'jquery';
 import Variants from '@shopify/theme-variants';
-import {imageSize, preload, getSizedImageUrl} from '@shopify/theme-images';
-import {formatMoney} from '@shopify/theme-currency';
+import { imageSize, preload, getSizedImageUrl } from '@shopify/theme-images';
+import { formatMoney } from '@shopify/theme-currency';
 import sections from '@shopify/theme-sections';
 
 const selectors = {
@@ -23,7 +23,7 @@ const selectors = {
   productJson: '[data-product-json]',
   productPrice: '[data-product-price]',
   productThumbs: '[data-product-single-thumbnail]',
-  singleOptionSelector: '[data-single-option-selector]',
+  singleOptionSelector: '[data-single-option-selector]'
 };
 
 /**
@@ -41,7 +41,7 @@ sections.register('product', {
     }
 
     this.productSingleObject = JSON.parse(
-      $(selectors.productJson, this.$container).html(),
+      $(selectors.productJson, this.$container).html()
     );
 
     const options = {
@@ -49,7 +49,7 @@ sections.register('product', {
       enableHistoryState: this.$container.data('enable-history-state') || false,
       singleOptionSelector: selectors.singleOptionSelector,
       originalSelectorId: selectors.originalSelectorId,
-      product: this.productSingleObject,
+      product: this.productSingleObject
     };
 
     this.settings = {};
@@ -58,11 +58,11 @@ sections.register('product', {
 
     this.$container.on(
       `variantChange${this.namespace}`,
-      this.updateAddToCartState.bind(this),
+      this.updateAddToCartState.bind(this)
     );
     this.$container.on(
       `variantPriceChange${this.namespace}`,
-      this.updateProductPrices.bind(this),
+      this.updateProductPrices.bind(this)
     );
 
     if (this.$featuredImage.length > 0) {
@@ -71,8 +71,30 @@ sections.register('product', {
 
       this.$container.on(
         `variantImageChange${this.namespace}`,
-        this.updateProductImage.bind(this),
+        this.updateProductImage.bind(this)
       );
+    }
+
+    $(document).scroll(() => {
+      this.checkOffset().bind(this);
+    });
+  },
+
+  checkOffset() {
+    if (
+      $('.sticky-mobile-info').offset().top +
+        $('.sticky-mobile-info').height() >=
+      $('#shopify-section-footer').offset().top - 10
+    ) {
+      $('.sticky-mobile-info').css('position', 'absolute');
+    }
+
+    if (
+      $(document).scrollTop() + window.innerHeight <
+      $('#shopify-section-footer').offset().top
+    ) {
+      // restore when you scroll up
+      $('.sticky-mobile-info').css('position', 'fixed');
     }
   },
 
@@ -90,7 +112,7 @@ sections.register('product', {
     } else {
       $(selectors.addToCart, this.$container).prop('disabled', true);
       $(selectors.addToCartText, this.$container).html(
-        theme.strings.unavailable,
+        theme.strings.unavailable
       );
       $(selectors.priceWrapper, this.$container).addClass('hide');
       return;
@@ -116,16 +138,16 @@ sections.register('product', {
     const $comparePrice = $(selectors.comparePrice, this.$container);
     const $compareEls = $comparePrice.add(
       selectors.comparePriceText,
-      this.$container,
+      this.$container
     );
 
     $(selectors.productPrice, this.$container).html(
-      formatMoney(variant.price, theme.moneyFormat),
+      formatMoney(variant.price, theme.moneyFormat)
     );
 
     if (variant.compare_at_price > variant.price) {
       $comparePrice.html(
-        formatMoney(variant.compare_at_price, theme.moneyFormat),
+        formatMoney(variant.compare_at_price, theme.moneyFormat)
       );
       $compareEls.removeClass('hide');
     } else {
@@ -143,7 +165,7 @@ sections.register('product', {
     const variant = evt.variant;
     const sizedImgUrl = getSizedImageUrl(
       variant.featured_image.src,
-      this.settings.imageSize,
+      this.settings.imageSize
     );
 
     this.$featuredImage.attr('src', sizedImgUrl);
@@ -154,5 +176,5 @@ sections.register('product', {
    */
   onUnload() {
     this.$container.off(this.namespace);
-  },
+  }
 });
