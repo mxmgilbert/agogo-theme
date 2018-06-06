@@ -4,11 +4,6 @@ header {
   }
 }
 
-#shopify-section-header {
-  z-index: 999;
-  position: relative;
-}
-
 nav.main-nav {
   text-align: center;
   width: 695px;
@@ -20,9 +15,24 @@ nav.main-nav {
   top: 222px;
   font-family: "TotentanzBackslanted";
   font-size: 1.2em;
+  z-index: 99;
 
   ul {
     display: flex;
+
+    ul.submenu {
+      transform: rotate(90deg);
+      position: relative;
+      flex-direction: column;
+      text-align: initial;
+      padding: 0;
+      margin-top: 20px;
+      margin-left: -50px;
+
+      a {
+        font-size: 0.7em;
+      }
+    }
   }
 
   li {
@@ -60,37 +70,13 @@ nav.main-nav {
   }
 }
 
-nav.filter {
-  position: fixed;
-  z-index: 10;
-  top: 8%;
-
-  ul {
-    list-style: none;
-    margin-left: 5px;
-
-    a {
-      text-decoration: none;
-      color: black;
-      font-family: "TotentanzBackslanted";
-      font-size: 14px;
-      -webkit-transition: all 300ms ease-in-out;
-      -ms-transition: all 300ms ease-in-out;
-      transition: all 300ms ease-in-out;
-    }
-
-    a:hover,
-    a:active {
-      color: #ffa2df;
-    }
-  }
-}
-
 .logo-image {
   position: fixed;
   top: 44px;
   left: calc(50% - 100px);
   z-index: 999;
+  mix-blend-mode: difference;
+  filter: invert(100%);
 }
 
 .cart {
@@ -152,23 +138,41 @@ nav.filter {
   .main-nav.responsive {
     position: relative;
     padding-top: 30%;
-    height: 400px;
+    height: 570px;
     background: rgba(255, 255, 255, 0.7);
+
+    ul.submenu {
+      transform: none;
+      margin-top: -5px;
+      width: 90%;
+      float: right;
+
+      a {
+        font-size: 0.4em;
+      }
+    }
+  }
+
+  .main-nav.responsive li {
+    display: block;
+    text-align: left;
+    font-size: 1.4em;
   }
 
   .main-nav.responsive li:not(:last-child) {
-    display: block;
-    text-align: left;
     border-bottom: 1px solid black;
-    font-size: 30px;
   }
 
-  .main-nav.responsive li:first-child {
+  .main-nav.responsive > ul > li:first-child {
     border-top: 2px solid black;
   }
 
-  .main-nav.responsive li:nth-last-child(2) {
+  .main-nav.responsive > ul > li:nth-last-child(2) {
     border-bottom: 2px solid black;
+  }
+
+  .submenu > li:last-child {
+    border-bottom: none;
   }
 
   .main-nav.responsive .cart-nav {
@@ -181,6 +185,8 @@ nav.filter {
     top: 25px;
     left: calc(50% - 57px);
     width: 110px;
+    mix-blend-mode: unset;
+    filter: unset;
   }
 
   .cart {
@@ -198,7 +204,7 @@ nav.filter {
   }
 
   #shopify-section-header {
-    height: 90px;
+    height: 80px;
     position: fixed;
     background: rgba(255, 255, 255, 0.6);
     z-index: 999;

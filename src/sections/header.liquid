@@ -10,6 +10,19 @@
   Theme Store optional settings
   - Home page only: only shows on the home page
 {%- endcomment -%}
+
+ <a href="/" itemprop="url"{% if section.settings.logo != blank %} class="logo-image"{% endif %}>
+    {% if section.settings.logo != blank %}
+      {% capture image_size %}{{ section.settings.logo_max_width }}x{% endcapture %}
+      <img src="{{ section.settings.logo | img_url: image_size }}"
+          srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
+          alt="{{ section.settings.logo.alt | default: shop.name }}"
+          itemprop="logo">
+    {% else %}
+      {{ shop.name }}
+    {% endif %}
+  </a>
+  
 <section data-section-id="{{ section.id }}" data-section-type="header">
   {%- if section.settings.announcement_bar_enabled -%}
     <div>
@@ -31,17 +44,7 @@
     {% else %}
       <div class="h1" itemscope itemtype="http://schema.org/Organization">
     {% endif %}
-        <a href="/" itemprop="url"{% if section.settings.logo != blank %} class="logo-image"{% endif %}>
-          {% if section.settings.logo != blank %}
-            {% capture image_size %}{{ section.settings.logo_max_width }}x{% endcapture %}
-            <img src="{{ section.settings.logo | img_url: image_size }}"
-                srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
-                alt="{{ section.settings.logo.alt | default: shop.name }}"
-                itemprop="logo">
-          {% else %}
-            {{ shop.name }}
-          {% endif %}
-        </a>
+       
     {% if template.name == 'index' %}
       </h1>
     {% else %}
@@ -102,36 +105,6 @@
     {%- endcomment -%}
   </header>
 
-{%comment%}
-  <nav role="navigation" class="filter">
-    <ul>
-      {% for link in linklists[section.settings.menu_for_filter].links %}
-        {% if link.links != blank %}
-          <li>
-            <a href="{{ link.url }}">
-              {{ link.title }}
-              {% include 'icon-arrow-down' %}
-            </a>
-            <ul>
-              {% for childlink in link.links %}
-                <li>
-                  <a href="{{ childlink.url }}">
-                    {{ childlink.title }}
-                  </a>
-                </li>
-              {% endfor %}
-            </ul>
-          </li>
-        {% else %}
-          <li>
-            <a href="{{ link.url }}"> {{ link.title }} </a>
-          </li>
-        {% endif %}
-      {% endfor %}
-    </ul>
-  </nav>
-  {%endcomment%}
-
   <nav role="navigation" class="main-nav" id="main-nav">
 
     <a href="/cart" class="cart-nav">
@@ -142,11 +115,13 @@
       {% for link in linklists[section.settings.menu].links %}
         {% if link.links != blank %}
           <li>
-            <a href="{{ link.url }}">
+            <a href="{{ link.url }}" {% if link.active %} class='active' {%endif %}>
               {{ link.title }}
-              {% include 'icon-arrow-down' %}
+              <span class="nav-separator">/</span>
+              {%- comment -%}{% include 'icon-arrow-down' %}{%- endcomment -%}
             </a>
-            <ul>
+            {% if link.active %}
+            <ul class="submenu">
               {% for childlink in link.links %}
                 <li>
                   <a href="{{ childlink.url }}">
@@ -155,6 +130,7 @@
                 </li>
               {% endfor %}
             </ul>
+            {%endif %}
           </li>
         {% else %}
           <li>
