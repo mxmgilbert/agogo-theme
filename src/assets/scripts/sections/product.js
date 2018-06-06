@@ -75,9 +75,11 @@ sections.register('product', {
       );
     }
 
-    $(document).scroll(() => {
-      this.checkOffset().bind(this);
-    });
+    if ($(window).width() <= 728) {
+      $(document).scroll(() => {
+        this.checkOffset().bind(this);
+      });
+    }
   },
 
   checkOffset() {
