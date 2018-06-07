@@ -13,8 +13,8 @@
         {% if section.settings.image != blank %}
           {% include 'responsive-image' with
             image: section.settings.image,
-            max_width: 1080,
-            max_height: 1080
+            max_width: 1450,
+            max_height: 1450
           %}
         {% else %}
           {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
