@@ -27,7 +27,8 @@ nav.main-nav {
       text-align: initial;
       padding: 0;
       margin-top: 20px;
-      margin-left: -50px;
+      font-size: 0.8em;
+      margin-left: -25%;
 
       a {
         font-size: 0.7em;
@@ -180,7 +181,7 @@ nav.main-nav {
   }
 
   .logo-image {
-    top: 25px;
+    top: 22px;
     left: calc(50% - 57px);
     width: 110px;
     mix-blend-mode: unset;

@@ -118,9 +118,7 @@
             <a href="{{ link.url }}" {% if link.active %} class='active' {%endif %}>
               {{ link.title }}
               <span class="nav-separator">/</span>
-              {%- comment -%}{% include 'icon-arrow-down' %}{%- endcomment -%}
             </a>
-            {% if link.active %}
             <ul class="submenu">
               {% for childlink in link.links %}
                 <li>
@@ -130,7 +128,6 @@
                 </li>
               {% endfor %}
             </ul>
-            {%endif %}
           </li>
         {% else %}
           <li>
