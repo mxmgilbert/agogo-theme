@@ -13,7 +13,7 @@ nav.main-nav {
   position: fixed;
   left: -302px;
   top: 222px;
-  font-family: "TotentanzBackslanted";
+  font-family: 'TotentanzBackslanted';
   font-size: 1.2em;
   z-index: 99;
 
@@ -55,7 +55,7 @@ nav.main-nav {
   }
 
   a.active {
-    font-family: "TotentanzSlanted";
+    font-family: 'TotentanzSlanted';
   }
 
   span.nav-separator {
@@ -91,7 +91,7 @@ nav.main-nav {
   top: 9%;
   color: white;
   background: black;
-  font-family: "InterstateBold";
+  font-family: 'InterstateBold';
   text-decoration: none;
   padding: 5px 8px;
   border-radius: 100%;
@@ -202,7 +202,7 @@ nav.main-nav {
   }
 
   #shopify-section-header {
-    height: 80px;
+    height: 79px;
     position: fixed;
     background: rgba(255, 255, 255, 0.6);
     z-index: 999;
