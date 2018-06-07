@@ -24,7 +24,7 @@ nav.main-nav {
       position: relative;
       flex-direction: column;
       margin-top: 20px;
-      margin-left: -25%;
+      margin-left: -62%;
       padding: 0;
       transform: rotate(90deg);
       text-align: initial;
@@ -86,15 +86,14 @@ nav.main-nav {
   max-width: 75px;
 
   svg {
-    margin-top: -25px;
+    margin-top: -23px;
   }
 }
 
 .cart-item-count {
   position: absolute;
   left: 34%;
-  top: -33%;
-
+  top: -28%;
   color: white;
   background: black;
   font-family: 'InterstateBold';
@@ -201,7 +200,7 @@ nav.main-nav {
 
   .cart-item-count {
     left: 34%;
-    top: -72%;
+    top: -63%;
     padding: 2px 5px;
     border-radius: 93%;
     font-size: 11px;
