@@ -68,7 +68,7 @@ button.add-to-cart {
   text-transform: uppercase;
   font-size: 17px;
   font-family: 'InterstateBold';
-  margin: 2% 0 5% 0;
+  margin: 2% 0 5%;
   width: 160px;
 }
 
@@ -111,13 +111,13 @@ button.add-to-cart {
       grid-row: 2;
 
       .price {
-        font-size: 1.6em;
+        font-size: 1.4em;
         margin-bottom: 10px;
       }
 
       h1 {
         text-align: center;
-        font-size: 1.5em;
+        font-size: 1.3em;
         font-weight: 100;
         padding: 0 2%;
       }
@@ -137,23 +137,23 @@ button.add-to-cart {
 
       .sticky-mobile-info {
         position: fixed;
-        background: white;
-        width: 100%;
         bottom: 0;
+        width: 100%;
+        background: white;
 
         .one-size {
           display: block;
-          font-size: 17px;
-          width: 160px;
-          margin: 2% 2% 5% 5%;
           float: left;
+          width: 42%;
           max-height: 43px;
+          margin: 2% 2% 5% 5%;
+          font-size: 17px;
         }
 
         button.add-to-cart {
-          margin: 2% 5% 5% 0;
-          width: 160px;
           float: right;
+          width: 42%;
+          margin: 2% 5% 5% 0;
         }
       }
     }
