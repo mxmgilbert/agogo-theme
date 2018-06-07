@@ -20,9 +20,9 @@
     font-weight: lighter;
   }
 
-  .featured-image-product {
+  /*.featured-image-product {
     margin-bottom: 10%;
-  }
+  }*/
 }
 
 .product-information-container {
@@ -32,6 +32,22 @@
   .price {
     font-size: 30px;
     margin-bottom: 25px;
+  }
+
+  p.soldout-tag {
+    color: #ffa2df;
+    margin-bottom: 0;
+  }
+  .product-souldout-separator {
+    color: #ffa2df;
+  }
+
+  .more-pieces-coming-tag {
+    margin-top: 0;
+  }
+
+  .soldout-product {
+    margin-bottom: 9%;
   }
 }
 

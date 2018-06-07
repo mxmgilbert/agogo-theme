@@ -83,6 +83,8 @@
           {% endif %}
         </div>
 
+        {% if current_variant.available %}
+
          <span class="one-size">
           One Size
         </span>
@@ -101,6 +103,13 @@
               {% endif %}
             </span>
         </button>
+        {% else %}
+        <div class="soldout-product">
+           <p class="soldout-tag">SOLD OUT</p>
+          <span class="product-souldout-separator">——————</span>
+          <p class="more-pieces-coming-tag">MORE PIECES COMING SOON</p>
+        </div>
+        {% endif %}
       </form>
       </div>
     </div>
