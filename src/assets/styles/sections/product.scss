@@ -6,13 +6,11 @@
 
 .product-container {
   display: grid;
-  grid-template-columns: repeat(2, minmax(350px, 1fr));
-  grid-template-rows: repeat(2, minmax(350px, 1fr));
   grid-column-gap: 2px;
   grid-row-gap: 2px;
-  max-width: 100%;
   margin-top: 9%;
   font-family: 'TotentanzSlanted';
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
 
   h1 {
     font-family: 'TotentanzSlanted';
@@ -99,9 +97,8 @@ button.add-to-cart {
     grid-template-columns: 1fr;
 
     .product-container {
-      grid-template-columns: 100%;
-      grid-template-columns: 1;
-      grid-template-rows: minmax(350px, min-content);
+      display: initial;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 
       .featured-image-product {
         margin-top: 45px;
@@ -159,6 +156,10 @@ button.add-to-cart {
           float: right;
         }
       }
+    }
+
+    .bottom-product-cart {
+      width: 100%;
     }
   }
 }
