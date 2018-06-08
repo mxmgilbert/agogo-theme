@@ -21,9 +21,11 @@
       &ndash; {{ 'general.meta.page' | t: page: current_page }}
     {%- endif -%}
     {%- assign escaped_page_title = page_title | escape -%}
+    {%comment%}
     {%- unless escaped_page_title contains shop.name -%}
       &ndash; {{ shop.name }}
     {%- endunless -%}
+    {%endcomment%}
   {%- endcapture -%}
   <title>{{ seo_title | strip }}</title>
 
